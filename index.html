@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora de Carbono - EcoVida</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>EcoVida 🌱</h1>
+      <nav>
+        <a href="index.html" class="active">Calculadora de Carbono</a>
+        <a href="blog.html">Blog de Horta</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Carrossel de imagens -->
+      <h2>Natureza em Movimento</h2>
+      <br />
+      <div class="carrossel-wrapper">
+        <div class="catalogo" id="catalogo">
+          <div
+            class="item"
+            style="
+              background-image: url('https://img.freepik.com/fotos-gratis/plantas-de-alto-angulo-com-folhas-verdes_23-2148573891.jpg?uid=R174078639&ga=GA1.1.1435799399.1750123471&semt=ais_hybrid&w=740');
+            "
+          ></div>
+          <div
+            class="item"
+            style="
+              background-image: url('https://img.freepik.com/fotos-premium/vista-aerea-de-uma-floresta-com-uma-arvore-verde-em-primeiro-plano_1040335-119813.jpg?uid=R174078639&ga=GA1.1.1435799399.1750123471&semt=ais_hybrid&w=740');
+            "
+          ></div>
+          <div
+            class="item"
+            style="
+              background-image: url('https://img.freepik.com/fotos-gratis/vista-superior-vertical-de-um-rio-ondulado-em-uma-floresta-densa-em-um-dia-de-outono_181624-48368.jpg?uid=R174078639&ga=GA1.1.1435799399.1750123471&semt=ais_hybrid&w=740');
+            "
+          ></div>
+          <div
+            class="item"
+            style="
+              background-image: url('https://img.freepik.com/fotos-premium/close-up-de-borboleta-polinizando-uma-flor_1048944-26541603.jpg');
+            "
+          ></div>
+          <div
+            class="item"
+            style="
+              background-image: url('https://img.freepik.com/fotos-gratis/bela-natureza-retro-com-passaros-a-beira-mar_23-2149681484.jpg?uid=R174078639&ga=GA1.1.1435799399.1750123471&semt=ais_hybrid&w=740');
+            "
+          ></div>
+        </div>
+      </div>
+
+      <!-- Nova seção explicativa sobre cálculo e padrões -->
+      <section id="como-calcular">
+        <h2>Como Calcular Sua Pegada de Carbono</h2>
+        <p>
+          Para calcular a pegada de carbono, consideramos o impacto ambiental de
+          suas atividades diárias, como o uso de transporte, consumo de energia
+          e alimentação. Cada atividade gera emissões de CO₂, que medimos em
+          quilogramas (kg) de dióxido de carbono.
+        </p>
+
+        <h3>Exemplos de Padrões e Fatores Usados</h3>
+        <ul>
+          <li>
+            <strong>Transporte de Carro:</strong> Em média, cada km rodado gera
+            <em>0,21 kg CO₂</em>.
+          </li>
+          <li>
+            <strong>Transporte Público:</strong> Em média, cada km rodado gera
+            <em>0,12 kg CO₂</em>.
+          </li>
+          <li>
+            <strong>Consumo de Energia Elétrica:</strong> Consideramos
+            <em>0,5 kg CO₂</em> para cada kWh consumido.
+          </li>
+          <li>
+            <strong>Refeições com Carne:</strong> Cada refeição gera cerca de
+            <em>1,5 kg CO₂</em>.
+          </li>
+          <li>
+            <strong>Consumo de Água:</strong> Cada litro de água tratado gera
+            aproximadamente <em>0,01 kg CO₂</em>.
+          </li>
+        </ul>
+
+        <h3>Padrões de Consumo de Energia (exemplos)</h3>
+        <ul>
+          <li>
+            <strong>Chuveiro elétrico:</strong> Normalmente usa entre
+            <em>3.000 a 7.500 watts</em> (3 a 7,5 kW).
+          </li>
+          <li>
+            Considerando um chuveiro de 5.500 W ligado por 10 minutos, o consumo
+            será aproximadamente <em>0,92 kWh</em>.
+          </li>
+        </ul>
+      </section>
+      <!-- Final da seção explicativa -->
+
+      <div class="container">
+        <h2>Calculadora de Pegada de Carbono</h2>
+
+        <label for="categoria">Escolha o que deseja calcular:</label>
+        <select id="categoria" onchange="mostrarSecao()">
+          <option value="">-- Selecione --</option>
+          <option value="transporte">Transporte</option>
+          <option value="energia">Energia</option>
+          <option value="alimentacao">Alimentação</option>
+          <option value="agua">Consumo de Água</option>
+        </select>
+
+        <div id="transporte" class="form-section" style="display: none">
+          <label for="kmCarro">Km por dia de carro:</label>
+          <input type="number" id="kmCarro" placeholder="Ex: 20" min="0" />
+
+          <label for="kmOnibus">Km por dia de transporte público:</label>
+          <input type="number" id="kmOnibus" placeholder="Ex: 10" min="0" />
+
+          <button onclick="calcularTransporte()">Calcular Transporte</button>
+          <div id="resultadoTransporte" class="resultado"></div>
+        </div>
+
+        <div id="energia" class="form-section" style="display: none">
+          <label for="kwh">Consumo mensal de energia (kWh):</label>
+          <input type="number" id="kwh" placeholder="Ex: 100" min="0" />
+          <button onclick="calcularEnergia()">Calcular Energia</button>
+          <div id="resultadoEnergia" class="resultado"></div>
+        </div>
+
+        <div id="alimentacao" class="form-section" style="display: none">
+          <label for="refeicoes">Refeições com carne por semana:</label>
+          <input type="number" id="refeicoes" placeholder="Ex: 14" min="0" />
+          <button onclick="calcularAlimentacao()">Calcular Alimentação</button>
+          <div id="resultadoAlimentacao" class="resultado"></div>
+        </div>
+
+        <div id="agua" class="form-section" style="display: none">
+          <label for="litrosAgua">Litros de água por dia:</label>
+          <input type="number" id="litrosAgua" placeholder="Ex: 200" min="0" />
+          <button onclick="calcularAgua()">Calcular Água</button>
+          <div id="resultadoAgua" class="resultado"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>© 2025 - Projeto EcoVida • Ana Paula Rosa Nunes</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
