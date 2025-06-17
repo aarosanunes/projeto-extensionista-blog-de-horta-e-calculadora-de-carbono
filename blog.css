@@ -1,14 +1,15 @@
-/* Reset básico */
+/* ------------------ RESET ------------------ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ------------------ BASE ------------------ */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f9fdf7; /* verde bem clarinho */
-  color: #2e3a21; /* verde escuro */
+  background: #f9fdf7;
+  color: #2e3a21;
   line-height: 1.6;
   padding: 20px;
   min-height: 100vh;
@@ -16,12 +17,12 @@ body {
   flex-direction: column;
 }
 
-/* HEADER */
+/* ------------------ HEADER ------------------ */
 header {
-  background-color: #96db98; /* verde principal */
+  background-color: #96db98;
   padding: 20px 30px;
   color: #f0fff0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,6 +34,7 @@ header h1 {
   user-select: none;
 }
 
+/* ------------------ NAV ------------------ */
 nav a {
   color: #e6f2d9;
   text-decoration: none;
@@ -44,7 +46,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #81c784; /* verde mais claro */
+  background-color: #81c784;
   color: #1b3a07;
 }
 
@@ -55,7 +57,7 @@ nav a[aria-current="page"] {
   cursor: default;
 }
 
-/* MAIN */
+/* ------------------ MAIN ------------------ */
 main {
   flex-grow: 1;
   max-width: 900px;
@@ -63,10 +65,10 @@ main {
   background: #ffffff;
   padding: 30px 40px;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* ARTIGO */
+/* ------------------ ARTICLE ------------------ */
 article.blog h2 {
   color: #2e7d32;
   margin-bottom: 15px;
@@ -79,7 +81,7 @@ article.blog p {
   color: #405d27;
 }
 
-/* SECTIONS */
+/* ------------------ SECTIONS ------------------ */
 section h3 {
   margin-top: 30px;
   margin-bottom: 12px;
@@ -89,7 +91,7 @@ section h3 {
   padding-bottom: 5px;
 }
 
-/* LISTAS */
+/* ------------------ LISTAS ------------------ */
 ul {
   list-style-type: disc;
   margin-left: 20px;
@@ -102,7 +104,7 @@ ul li {
   margin-bottom: 10px;
 }
 
-/* TABELA */
+/* ------------------ TABELAS ------------------ */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -115,7 +117,8 @@ thead {
   color: #2e7d32;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #c8e6c9;
   padding: 12px 15px;
   text-align: left;
@@ -130,7 +133,7 @@ tbody tr:hover {
   transition: background-color 0.3s ease;
 }
 
-/* LINKS */
+/* ------------------ LINKS ------------------ */
 a {
   color: #388e3c;
   text-decoration: underline;
@@ -141,7 +144,7 @@ a:hover {
   text-decoration: none;
 }
 
-/* FOOTER */
+/* ------------------ FOOTER ------------------ */
 footer {
   text-align: center;
   padding: 18px 10px;
@@ -154,7 +157,7 @@ footer {
   border-top: 1px solid #c8e6c9;
 }
 
-/* RESPONSIVIDADE */
+/* ------------------ RESPONSIVO ------------------ */
 @media (max-width: 600px) {
   header {
     flex-direction: column;

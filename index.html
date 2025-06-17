@@ -16,7 +16,7 @@
     </header>
 
     <main>
-      <!-- Carrossel de imagens -->
+      <!-- Carrossel de Imagens -->
       <h2>Natureza em Movimento</h2>
       <br />
       <div class="carrossel-wrapper">
@@ -24,19 +24,19 @@
           <div
             class="item"
             style="
-              background-image: url('https://img.freepik.com/fotos-gratis/plantas-de-alto-angulo-com-folhas-verdes_23-2148573891.jpg?uid=R174078639&ga=GA1.1.1435799399.1750123471&semt=ais_hybrid&w=740');
+              background-image: url('https://img.freepik.com/fotos-gratis/plantas-de-alto-angulo-com-folhas-verdes_23-2148573891.jpg');
             "
           ></div>
           <div
             class="item"
             style="
-              background-image: url('https://img.freepik.com/fotos-premium/vista-aerea-de-uma-floresta-com-uma-arvore-verde-em-primeiro-plano_1040335-119813.jpg?uid=R174078639&ga=GA1.1.1435799399.1750123471&semt=ais_hybrid&w=740');
+              background-image: url('https://img.freepik.com/fotos-premium/vista-aerea-de-uma-floresta-com-uma-arvore-verde-em-primeiro-plano_1040335-119813.jpg');
             "
           ></div>
           <div
             class="item"
             style="
-              background-image: url('https://img.freepik.com/fotos-gratis/vista-superior-vertical-de-um-rio-ondulado-em-uma-floresta-densa-em-um-dia-de-outono_181624-48368.jpg?uid=R174078639&ga=GA1.1.1435799399.1750123471&semt=ais_hybrid&w=740');
+              background-image: url('https://img.freepik.com/fotos-gratis/vista-superior-vertical-de-um-rio-ondulado-em-uma-floresta-densa-em-um-dia-de-outono_181624-48368.jpg');
             "
           ></div>
           <div
@@ -48,13 +48,13 @@
           <div
             class="item"
             style="
-              background-image: url('https://img.freepik.com/fotos-gratis/bela-natureza-retro-com-passaros-a-beira-mar_23-2149681484.jpg?uid=R174078639&ga=GA1.1.1435799399.1750123471&semt=ais_hybrid&w=740');
+              background-image: url('https://img.freepik.com/fotos-gratis/bela-natureza-retro-com-passaros-a-beira-mar_23-2149681484.jpg');
             "
           ></div>
         </div>
       </div>
 
-      <!-- Nova seção explicativa sobre cálculo e padrões -->
+      <!-- Explicação -->
       <section id="como-calcular">
         <h2>Como Calcular Sua Pegada de Carbono</h2>
         <p>
@@ -67,41 +67,34 @@
         <h3>Exemplos de Padrões e Fatores Usados</h3>
         <ul>
           <li>
-            <strong>Transporte de Carro:</strong> Em média, cada km rodado gera
+            <strong>Transporte de Carro:</strong> Cada km rodado gera
             <em>0,21 kg CO₂</em>.
           </li>
           <li>
-            <strong>Transporte Público:</strong> Em média, cada km rodado gera
+            <strong>Transporte Público:</strong> Cada km rodado gera
             <em>0,12 kg CO₂</em>.
           </li>
           <li>
-            <strong>Consumo de Energia Elétrica:</strong> Consideramos
-            <em>0,5 kg CO₂</em> para cada kWh consumido.
+            <strong>Energia Elétrica:</strong> Cada kWh consumido gera
+            <em>0,5 kg CO₂</em>.
           </li>
           <li>
-            <strong>Refeições com Carne:</strong> Cada refeição gera cerca de
+            <strong>Refeições com Carne:</strong> Cada refeição gera
             <em>1,5 kg CO₂</em>.
           </li>
           <li>
-            <strong>Consumo de Água:</strong> Cada litro de água tratado gera
-            aproximadamente <em>0,01 kg CO₂</em>.
+            <strong>Água Tratada:</strong> Cada litro gera <em>0,01 kg CO₂</em>.
           </li>
         </ul>
 
-        <h3>Padrões de Consumo de Energia (exemplos)</h3>
+        <h3>Padrões de Consumo de Energia</h3>
         <ul>
-          <li>
-            <strong>Chuveiro elétrico:</strong> Normalmente usa entre
-            <em>3.000 a 7.500 watts</em> (3 a 7,5 kW).
-          </li>
-          <li>
-            Considerando um chuveiro de 5.500 W ligado por 10 minutos, o consumo
-            será aproximadamente <em>0,92 kWh</em>.
-          </li>
+          <li><strong>Chuveiro elétrico:</strong> 3.000 a 7.500 watts.</li>
+          <li>Ex: 5.500 W por 10 minutos = <em>0,92 kWh</em>.</li>
         </ul>
       </section>
-      <!-- Final da seção explicativa -->
 
+      <!-- Calculadora -->
       <div class="container">
         <h2>Calculadora de Pegada de Carbono</h2>
 
@@ -114,6 +107,7 @@
           <option value="agua">Consumo de Água</option>
         </select>
 
+        <!-- Transporte -->
         <div id="transporte" class="form-section" style="display: none">
           <label for="kmCarro">Km por dia de carro:</label>
           <input type="number" id="kmCarro" placeholder="Ex: 20" min="0" />
@@ -125,6 +119,7 @@
           <div id="resultadoTransporte" class="resultado"></div>
         </div>
 
+        <!-- Energia -->
         <div id="energia" class="form-section" style="display: none">
           <label for="kwh">Consumo mensal de energia (kWh):</label>
           <input type="number" id="kwh" placeholder="Ex: 100" min="0" />
@@ -132,6 +127,7 @@
           <div id="resultadoEnergia" class="resultado"></div>
         </div>
 
+        <!-- Alimentação -->
         <div id="alimentacao" class="form-section" style="display: none">
           <label for="refeicoes">Refeições com carne por semana:</label>
           <input type="number" id="refeicoes" placeholder="Ex: 14" min="0" />
@@ -139,6 +135,7 @@
           <div id="resultadoAlimentacao" class="resultado"></div>
         </div>
 
+        <!-- Água -->
         <div id="agua" class="form-section" style="display: none">
           <label for="litrosAgua">Litros de água por dia:</label>
           <input type="number" id="litrosAgua" placeholder="Ex: 200" min="0" />
@@ -146,6 +143,66 @@
           <div id="resultadoAgua" class="resultado"></div>
         </div>
       </div>
+
+      <section
+        id="como-evitar"
+        style="
+          margin-top: 3rem;
+          padding: 2rem;
+          background: #e6f2e6;
+          border-radius: 8px;
+        "
+      >
+        <h2>Como Evitar Gastos e Emissões de Carbono</h2>
+        <p>
+          Reduzir a pegada de carbono é essencial para proteger nosso planeta e
+          garantir um futuro mais sustentável. Pequenas mudanças no dia a dia
+          fazem uma grande diferença para o meio ambiente e para o seu bolso.
+        </p>
+
+        <h3>Dicas Práticas para Diminuir Emissões</h3>
+        <ul
+          style="list-style-type: disc; margin-left: 1.5rem; line-height: 1.6"
+        >
+          <li>
+            <strong
+              >Prefira caminhar, pedalar ou usar transporte público</strong
+            >
+            sempre que possível. Isso reduz significativamente as emissões
+            causadas por veículos particulares.
+          </li>
+          <li>
+            <strong>Opte por fontes de energia renovável</strong>, como painéis
+            solares, ou negocie com sua fornecedora para utilizar energia limpa.
+          </li>
+          <li>
+            <strong>Economize energia em casa:</strong> desligue aparelhos
+            quando não estiverem em uso, troque lâmpadas por LED, e aproveite a
+            luz natural durante o dia.
+          </li>
+          <li>
+            <strong>Consuma alimentos locais e baseados em plantas.</strong>
+            Reduzir o consumo de carne diminui as emissões associadas à produção
+            animal.
+          </li>
+          <li>
+            <strong>Evite o desperdício de água.</strong> Tome banhos mais
+            curtos, conserte vazamentos e reutilize água quando possível.
+          </li>
+          <li>
+            <strong>Pratique a reciclagem e o consumo consciente.</strong> Menos
+            produção significa menos poluição e economia de recursos naturais.
+          </li>
+        </ul>
+
+        <h3>Benefícios de Reduzir a Pegada de Carbono</h3>
+        <p>
+          Além de ajudar o planeta, essas práticas podem reduzir suas contas de
+          energia e água, melhorar sua saúde, e promover uma vida mais
+          consciente e equilibrada. Cada passo conta e juntos podemos fazer a
+          diferença!
+        </p>
+      </section>
     </main>
 
     <footer>© 2025 - Projeto EcoVida • Ana Paula Rosa Nunes</footer>

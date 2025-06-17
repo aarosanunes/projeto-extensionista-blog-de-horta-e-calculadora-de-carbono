@@ -1,38 +1,41 @@
-/* Reset básico */
+/* Zera margens, preenchimentos e define o modelo de caixa padrão */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilo geral do corpo da página */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #f9fdf7;
-  color: #2e3a21;
-  line-height: 1.6;
+  background: #f9fdf7; /* Cor de fundo clara */
+  color: #2e3a21; /* Cor do texto */
+  line-height: 1.6; /* Espaçamento entre linhas */
   padding: 20px;
-  min-height: 100vh;
+  min-height: 100vh; /* Altura mínima da tela */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Itens em coluna */
 }
 
-/* HEADER */
+/* Cabeçalho principal */
 header {
-  background-color: #96db98;
+  background-color: #96db98; /* Verde claro */
   padding: 20px 30px;
   color: #f0fff0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Quebra se faltar espaço */
 }
 
+/* Título no cabeçalho */
 header h1 {
   font-size: 1.8rem;
-  user-select: none;
+  user-select: none; /* Não deixa selecionar o texto */
 }
 
+/* Links do menu de navegação */
 nav a {
   color: #e6f2d9;
   text-decoration: none;
@@ -43,11 +46,13 @@ nav a {
   transition: background-color 0.3s ease;
 }
 
+/* Hover no link do menu */
 nav a:hover {
   background-color: #81c784;
   color: #1b3a07;
 }
 
+/* Link ativo no menu */
 nav a.active,
 nav a[aria-current="page"] {
   background-color: #2e7d32;
@@ -55,30 +60,32 @@ nav a[aria-current="page"] {
   cursor: default;
 }
 
-/* MAIN */
+/* Área principal */
 main {
   flex-grow: 1;
   max-width: 900px;
   margin: 30px auto;
-  background: #ffffff;
+  background: #fff;
   padding: 30px 40px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* BLOG CONTENT */
+/* Título de postagem do blog */
 article.blog h2 {
   color: #2e7d32;
   margin-bottom: 15px;
   font-size: 2rem;
 }
 
+/* Parágrafos do blog */
 article.blog p {
   margin-bottom: 20px;
   font-size: 1.1rem;
   color: #405d27;
 }
 
+/* Título de seções */
 section h3 {
   margin-top: 30px;
   margin-bottom: 12px;
@@ -88,6 +95,7 @@ section h3 {
   padding-bottom: 5px;
 }
 
+/* Estilo de listas */
 ul {
   list-style-type: disc;
   margin-left: 20px;
@@ -96,10 +104,12 @@ ul {
   margin-bottom: 20px;
 }
 
+/* Itens da lista */
 ul li {
   margin-bottom: 10px;
 }
 
+/* Tabelas */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -107,38 +117,43 @@ table {
   font-size: 1rem;
 }
 
+/* Cabeçalho da tabela */
 thead {
   background-color: #e8f5e9;
   color: #2e7d32;
 }
 
-th,
-td {
+/* Células da tabela */
+th, td {
   border: 1px solid #c8e6c9;
   padding: 12px 15px;
   text-align: left;
 }
 
+/* Linhas alternadas da tabela */
 tbody tr:nth-child(odd) {
   background-color: #f1f8e9;
 }
 
+/* Efeito hover na tabela */
 tbody tr:hover {
   background-color: #dcedc8;
   transition: background-color 0.3s ease;
 }
 
+/* Links em geral */
 a {
   color: #388e3c;
   text-decoration: underline;
 }
 
+/* Hover dos links */
 a:hover {
   color: #1b5e20;
   text-decoration: none;
 }
 
-/* FOOTER */
+/* Rodapé */
 footer {
   text-align: center;
   padding: 18px 10px;
@@ -151,7 +166,7 @@ footer {
   border-top: 1px solid #c8e6c9;
 }
 
-/* ===== CARROSSEL ===== */
+/* Carrossel de imagens */
 .carousel {
   position: relative;
   margin: 40px auto 20px;
@@ -162,11 +177,13 @@ footer {
   background: #f0f9f1;
 }
 
+/* Container do carrossel */
 .carousel-track-container {
   overflow: hidden;
   position: relative;
 }
 
+/* Faixa das imagens */
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -175,20 +192,23 @@ footer {
   margin: 0;
 }
 
+/* Slide do carrossel */
 .carousel-slide {
   min-width: 100%;
   user-select: none;
-  pointer-events: none; /* evita clique durante animação */
+  pointer-events: none;
   position: relative;
   opacity: 0.8;
   transition: opacity 0.3s ease;
 }
 
+/* Slide ativo */
 .carousel-slide.current-slide {
   pointer-events: auto;
   opacity: 1;
 }
 
+/* Imagem do slide */
 .carousel-slide img {
   width: 100%;
   height: auto;
@@ -197,7 +217,7 @@ footer {
   user-select: none;
 }
 
-/* Botões */
+/* Botões anterior/próximo */
 .carousel button.prev,
 .carousel button.next {
   position: absolute;
@@ -219,20 +239,23 @@ footer {
   justify-content: center;
 }
 
+/* Hover nos botões */
 .carousel button.prev:hover,
 .carousel button.next:hover {
   background-color: #388e3c;
 }
 
+/* Posição do botão esquerdo */
 .carousel button.prev {
   left: 10px;
 }
 
+/* Posição do botão direito */
 .carousel button.next {
   right: 10px;
 }
 
-/* Indicadores (se tiver) */
+/* Indicadores do carrossel (bolinhas) */
 .carousel-nav {
   text-align: center;
   margin-top: 15px;
@@ -249,11 +272,12 @@ footer {
   transition: background-color 0.3s ease;
 }
 
+/* Indicador ativo */
 .carousel-indicator.current-slide {
   background-color: #4caf50;
 }
 
-/* RESPONSIVIDADE */
+/* Responsividade: telas pequenas */
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -288,8 +312,14 @@ footer {
     height: 38px;
     font-size: 1.5rem;
   }
+
+  .item {
+    width: 220px;
+    height: 140px;
+  }
 }
-/* Container geral */
+
+/* Container do formulário da calculadora */
 .container {
   max-width: 480px;
   margin: 0 auto;
@@ -301,7 +331,7 @@ footer {
   box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
 }
 
-/* Títulos */
+/* Título da calculadora */
 .container h2 {
   text-align: center;
   margin-bottom: 24px;
@@ -310,7 +340,7 @@ footer {
   color: #1b5e20;
 }
 
-/* Labels */
+/* Rótulos */
 label {
   display: block;
   margin: 12px 0 6px 0;
@@ -318,8 +348,9 @@ label {
   font-size: 1rem;
 }
 
-/* Select e inputs */
-select, input[type="number"] {
+/* Campos de entrada */
+select,
+input[type="number"] {
   width: 100%;
   padding: 10px 14px;
   font-size: 1rem;
@@ -331,13 +362,15 @@ select, input[type="number"] {
   box-sizing: border-box;
 }
 
-select:focus, input[type="number"]:focus {
+/* Foco nos campos */
+select:focus,
+input[type="number"]:focus {
   border-color: #388e3c;
   box-shadow: 0 0 8px rgba(56, 142, 60, 0.4);
   outline: none;
 }
 
-/* Botões */
+/* Botão calcular */
 button {
   margin-top: 18px;
   width: 100%;
@@ -354,6 +387,7 @@ button {
   user-select: none;
 }
 
+/* Hover e clique no botão */
 button:hover {
   background: linear-gradient(135deg, #388e3c, #66bb6a);
   transform: translateY(-2px);
@@ -365,7 +399,7 @@ button:active {
   box-shadow: 0 3px 6px rgba(56, 142, 60, 0.5);
 }
 
-/* Resultados */
+/* Área de exibição do resultado */
 .resultado {
   margin-top: 14px;
   padding: 12px;
@@ -377,6 +411,8 @@ button:active {
   box-shadow: inset 0 0 8px rgba(46, 125, 50, 0.2);
   transition: background 0.3s ease;
 }
+
+/* Carrossel horizontal tipo catálogo */
 .carrossel-wrapper {
   overflow-x: hidden;
   width: 100%;
@@ -390,12 +426,19 @@ button:active {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   padding: 0 1rem;
+  cursor: grab;
+  scroll-snap-type: x mandatory;
+}
+
+.catalogo:active {
+  cursor: grabbing;
 }
 
 .catalogo::-webkit-scrollbar {
-  display: none; /* Oculta a barra de rolagem no Chrome/Safari */
+  display: none;
 }
 
+/* Itens do catálogo */
 .item {
   flex: 0 0 auto;
   width: 280px;
@@ -406,6 +449,7 @@ button:active {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: grab;
+  scroll-snap-align: start;
 }
 
 .item:hover {
@@ -413,9 +457,63 @@ button:active {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Estilo para a seção Como Evitar */
+#como-evitar {
+  margin-top: 3rem;
+  padding: 2rem 2.5rem;
+  background-color: #e6f2e6; /* verde claro suave */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(46, 58, 33, 0.1);
+  color: #2e3a21; /* verde escuro para o texto */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+#como-evitar h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1b2a10; /* verde mais forte para título */
+}
+
+#como-evitar h3 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #3a5224;
+}
+
+#como-evitar p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+#como-evitar ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  font-size: 1.1rem;
+  padding-left: 0;
+}
+
+#como-evitar ul li {
+  margin-bottom: 0.75rem;
+}
+
+/* Responsividade */
 @media (max-width: 600px) {
-  .item {
-    width: 220px;
-    height: 140px;
+  #como-evitar {
+    padding: 1.5rem 1.2rem;
+  }
+
+  #como-evitar h2 {
+    font-size: 1.6rem;
+  }
+
+  #como-evitar h3 {
+    font-size: 1.2rem;
+  }
+
+  #como-evitar p,
+  #como-evitar ul li {
+    font-size: 1rem;
   }
 }

@@ -2,14 +2,18 @@ function mostrarSecao() {
   const categoria = document.getElementById("categoria").value;
   const secoes = document.querySelectorAll(".form-section");
 
+  // Oculta todas as seções primeiro
   secoes.forEach((secao) => {
     secao.style.display = "none";
   });
 
+  // Exibe somente a seção selecionada
   if (categoria) {
     document.getElementById(categoria).style.display = "block";
   }
 }
+
+
 function calcularTransporte() {
   const kmCarro = parseFloat(document.getElementById("kmCarro").value) || 0;
   const kmOnibus = parseFloat(document.getElementById("kmOnibus").value) || 0;
@@ -19,85 +23,105 @@ function calcularTransporte() {
   const total = co2Carro + co2Onibus;
 
   document.getElementById("resultadoTransporte").innerHTML = `
-      Emissões diárias estimadas:<br>
-      🚗 Carro: <strong>${co2Carro.toFixed(2)}</strong> kg CO₂<br>
-      🚌 Ônibus: <strong>${co2Onibus.toFixed(2)}</strong> kg CO₂<br>
-      🌍 Total: <strong>${total.toFixed(2)}</strong> kg CO₂
-    `;
+    Emissões diárias estimadas:<br>
+    🚗 Carro: <strong>${co2Carro.toFixed(2)}</strong> kg CO₂<br>
+    🚌 Ônibus: <strong>${co2Onibus.toFixed(2)}</strong> kg CO₂<br>
+    🌍 Total: <strong>${total.toFixed(2)}</strong> kg CO₂
+  `;
 }
+
 
 function calcularEnergia() {
   const kwh = parseFloat(document.getElementById("kwh").value) || 0;
   const resultado = kwh * 0.5;
 
   document.getElementById("resultadoEnergia").innerHTML = `
-      💡 Sua pegada mensal de energia é de <strong>${resultado.toFixed(
-        2
-      )}</strong> kg CO₂.
-    `;
+    💡 Sua pegada mensal de energia é de <strong>${resultado.toFixed(2)}</strong> kg CO₂.
+  `;
 }
+
+
 
 function calcularAlimentacao() {
   const refeicoes = parseInt(document.getElementById("refeicoes").value) || 0;
   const resultado = refeicoes * 1.5;
 
   document.getElementById("resultadoAlimentacao").innerHTML = `
-      🍖 Suas refeições geram aproximadamente <strong>${resultado.toFixed(
-        2
-      )}</strong> kg CO₂ por semana.
-    `;
+    🍖 Suas refeições geram aproximadamente <strong>${resultado.toFixed(2)}</strong> kg CO₂ por semana.
+  `;
 }
+
+
 
 function calcularAgua() {
   const litros = parseFloat(document.getElementById("litrosAgua").value) || 0;
   const resultado = litros * 0.01;
 
   document.getElementById("resultadoAgua").innerHTML = `
-      💧 Seu consumo diário de água representa cerca de <strong>${resultado.toFixed(
-        2
-      )}</strong> kg CO₂.
-    `;
+    💧 Seu consumo diário de água representa cerca de <strong>${resultado.toFixed(2)}</strong> kg CO₂.
+  `;
 }
 
-const carrossel = document.getElementById("catalogo");
+// --- Carrossel de imagens ---
+const carrossel = document.querySelector('.catalogo');
 let isDown = false;
 let startX;
 let scrollLeft;
 
-// Arraste manual com mouse
-carrossel.addEventListener("mousedown", (e) => {
+// --- Arraste com mouse ---
+carrossel.addEventListener('mousedown', (e) => {
   isDown = true;
-  carrossel.classList.add("active");
+  carrossel.classList.add('active');
   startX = e.pageX - carrossel.offsetLeft;
   scrollLeft = carrossel.scrollLeft;
 });
 
-carrossel.addEventListener("mouseleave", () => {
+carrossel.addEventListener('mouseleave', () => {
   isDown = false;
-  carrossel.classList.remove("active");
+  carrossel.classList.remove('active');
 });
 
-carrossel.addEventListener("mouseup", () => {
+carrossel.addEventListener('mouseup', () => {
   isDown = false;
-  carrossel.classList.remove("active");
+  carrossel.classList.remove('active');
 });
 
-carrossel.addEventListener("mousemove", (e) => {
+carrossel.addEventListener('mousemove', (e) => {
   if (!isDown) return;
   e.preventDefault();
   const x = e.pageX - carrossel.offsetLeft;
-  const walk = (x - startX) * 1.5;
+  const walk = (x - startX) * 2;
   carrossel.scrollLeft = scrollLeft - walk;
 });
 
-// Autoplay automático
+// --- Arraste com touch ---
+carrossel.addEventListener('touchstart', (e) => {
+  isDown = true;
+  startX = e.touches[0].pageX - carrossel.offsetLeft;
+  scrollLeft = carrossel.scrollLeft;
+});
+
+carrossel.addEventListener('touchend', () => {
+  isDown = false;
+});
+
+carrossel.addEventListener('touchmove', (e) => {
+  if (!isDown) return;
+  const x = e.touches[0].pageX - carrossel.offsetLeft;
+  const walk = (x - startX) * 2;
+  carrossel.scrollLeft = scrollLeft - walk;
+});
+
+
+//  Autoplay automático do carrossel
+
 setInterval(() => {
   carrossel.scrollBy({
     left: 300,
     behavior: "smooth",
   });
 
-  // Voltar ao início se chegou ao fim
+  // Voltar ao início quando chegar ao final
   if (
     carrossel.scrollLeft + carrossel.clientWidth >=
     carrossel.scrollWidth - 10
@@ -105,3 +129,4 @@ setInterval(() => {
     carrossel.scrollTo({ left: 0, behavior: "smooth" });
   }
 }, 3000); // a cada 3 segundos
+
