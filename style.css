@@ -377,3 +377,45 @@ button:active {
   box-shadow: inset 0 0 8px rgba(46, 125, 50, 0.2);
   transition: background 0.3s ease;
 }
+.carrossel-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.catalogo {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 1rem;
+}
+
+.catalogo::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem no Chrome/Safari */
+}
+
+.item {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 180px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: grab;
+}
+
+.item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  .item {
+    width: 220px;
+    height: 140px;
+  }
+}
