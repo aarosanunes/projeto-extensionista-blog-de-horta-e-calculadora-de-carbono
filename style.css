@@ -34,6 +34,11 @@ header h1 {
   font-size: 1.8rem;
   user-select: none; /* Não deixa selecionar o texto */
 }
+h5 {
+ color: #66bb6a;
+ font-style: italic;
+}
+
 
 /* Links do menu de navegação */
 nav a {
