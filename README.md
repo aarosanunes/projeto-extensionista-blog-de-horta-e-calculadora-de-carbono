@@ -1,6 +1,6 @@
 # 🌱 Projeto Extensionista - Blog de Horta e Calculadora de Pegada de Carbono
 
-Este projeto foi desenvolvido como parte de uma atividade extensionista baseado nas 17 ODS. Ele visa **conscientizar sobre o meio ambiente**, oferecendo dicas práticas para criar hortas sustentáveis em casa e uma **calculadora de pegada de carbono** para ajudar usuários a entenderem o impacto de suas ações diárias.
+Este projeto foi desenvolvido como parte de uma atividade extensionista alinhado ás 17 ODS. Ele visa **conscientizar sobre o meio ambiente**, oferecendo dicas práticas para criar hortas sustentáveis em casa e uma **calculadora de pegada de carbono** para ajudar usuários a entenderem o impacto de suas ações diárias.
 
 ## 🔗 Acesse o site
 
