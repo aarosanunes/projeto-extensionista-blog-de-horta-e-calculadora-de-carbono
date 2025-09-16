@@ -1,6 +1,6 @@
 # 🌱 Projeto Extensionista - Blog de Horta e Calculadora de Pegada de Carbono
 
-Este projeto foi desenvolvido como parte de uma atividade extensionista do curso de Análise e Desenvolvimento de Sistemas da UNINTER. Ele visa **conscientizar sobre o meio ambiente**, oferecendo dicas práticas para criar hortas sustentáveis em casa e uma **calculadora de pegada de carbono** para ajudar usuários a entenderem o impacto de suas ações diárias.
+Este projeto foi desenvolvido como parte de uma atividade extensionista para o Curso de Ciência da Computação para Universidade Amhembi Morumbi. Ele visa **conscientizar sobre o meio ambiente**, oferecendo dicas práticas para criar hortas sustentáveis em casa e uma **calculadora de pegada de carbono** para ajudar usuários a entenderem o impacto de suas ações diárias.
 
 ## 🔗 Acesse o site
 
